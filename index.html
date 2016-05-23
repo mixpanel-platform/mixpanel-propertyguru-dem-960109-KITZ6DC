@@ -38,6 +38,7 @@
               chartOutput[segment] = {};
               var total = 0;
               dates = Object.keys(results.values()[segment]);
+              dates = dates.sort();
               console.log(dates);
               for(date in results.values()[segment]){
                 total += results.values()[segment][date];
