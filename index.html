@@ -44,10 +44,10 @@
                 chartOutput[segment][dates[i]] = total;
               }
             }
-            console.log(chartOutput);
-            eventGraph.MPChart('setData', results.values());
-            eventTable.MPTable('setData', results.values());
-            console.log(results.values());
+            //console.log(chartOutput);
+            eventGraph.MPChart('setData', chartOutput);
+            eventTable.MPTable('setData', chartOutput);
+            //console.log(results.values());
           });
         }
       };
