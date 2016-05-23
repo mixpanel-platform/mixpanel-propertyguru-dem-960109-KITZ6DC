@@ -33,9 +33,16 @@
 
         if (eventName) {
           MP.api.segment(eventName, propName, dateRange).done(function(results) {
+            var chartOutput = {};
             for(segment in results.values()){
-              console.log(segment);
+              chartOutput[segment] = {};
+              var total = 0;
+              for(date in results.values()[segment]){
+                total += results.values()[segment][date];
+                chartOutput[segment][date] = total;
+              }
             }
+            console.log(chartOutput);
             eventGraph.MPChart('setData', results.values());
             eventTable.MPTable('setData', results.values());
             console.log(results.values());
